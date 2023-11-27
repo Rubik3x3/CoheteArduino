@@ -33,7 +33,7 @@ void setup() {
 
   if ( !bmp.begin() ) {	// SI FALLA LA COMUNICACIÓN CON EL SENSOR
     Serial.println("No se encontró el sensor BMP280.");	
-    while (1);
+    error();
   }
   servo.attach(pinServo);
   servo.write(0); // MOVER EL SERVO A LA POSICIÓN INICIAL
@@ -51,6 +51,14 @@ void setup() {
    delay(100);
   }
   noTone(pinBuzzer);
+}
+
+void error(){
+  while (1){
+    tone(pinBuzzer, 1500);
+    delay(250);
+    noTone(pinBuzzer);
+  }
 }
 
 void mostrarDatos(int altura, int temperatura, int presion) {
@@ -90,5 +98,5 @@ void loop() {
     noTone(pinBuzzer);
   }
 
-  delay(500);
+  delay(25);
 }
