@@ -13,9 +13,9 @@ git clone https://github.com/Rubik3x3/CoheteArduino
 ```
 Ir a la carpeta CoheteArduino:
 ```
-cd CoheteArduino/Arduino/CoheteArduino
+cd CoheteArduino/Arduino/CoheteDeAguaArduino
 ```
 Abrir el programa en el Arduino IDE
 ```
-arduino 
+arduino CoheteDeAguaArduino.ino
 ```
